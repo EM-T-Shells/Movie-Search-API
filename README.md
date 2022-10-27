@@ -1,4 +1,4 @@
-# Bikini-Bottom_Farmers-Market
+# Bikini-Bottom_Cinema
 # Application Description
 Farmers Market Only is website designed for the purpose of searching for the locations/ time of farmer's markets. 
 When the user types in a city, they are met with a list of markets that contain their location and time.
