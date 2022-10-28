@@ -5,47 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bikini Bottom Cinema</title>
-    <script scr="https://cdn.talwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <main>
-        <header>
-            <h1>Bikini Bottom Cinema</h1>
-        </header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand"></div>
-            <a class="navbar-item" href="https://www.bikinibottomcinema.com" aria-label="Bikini Bottom Cinema">
-            </a>
-        </nav>
-        <section>
-            <ul>
-                <li>
-                    <a href="data-sharing.asp">
-                        Search History
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <section class="form">
-            <form>
-                <input type="text" name="What-Are-You-Looking-For-?" placeholder="What are you looking for?" required>
-                <button id="search-btn">
-                    Search
-                </button>
-            </form>
-        </section>
+<body class="bg-red-100 max-height-full">
+    <header class='px-4 py-2 bg-blue-100'>
+        <div class='flex justify-between items-center container mx-auto'>
+          <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1643004937711/k3NMskkSn.png" width="50" alt="Daily Dev Tips Logo" />
+          <h1>Bikini Bottom Cinema</h1>
+          <a href="data-sharing.asp">
+            Search History
+          </a>
+        </div>
+    </header>
+
+    <main class="flex flex-col items-center max-h-full">
+      <form class="border">
+        <input class="" type="text" name="search" placeholder="Find a Movie..." required>
+      </form>
+      <button id="search-btn" class="border border-black my-4 hover:bg-sky-500 hover:text-white">
+        Search
+      </button>
+      <section class="block flex flex-col items-center justify-around border bg-blue-100 p-24">
         <img id="poster"></img>
         <h2 id="title"></h2>
         <h2 id="vote"></h2>
         <p id="description"></p>
         <h3 id="release"></h3>
+      </section>
     </main>
-
-    <footer>
-        <p>
-            <h4>Find the movie for you!</h4>
-        </p>
-    </footer>
 
 </body>
 </html>
