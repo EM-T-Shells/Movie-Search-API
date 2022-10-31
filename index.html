@@ -7,14 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Bikini Bottom Cinema</title>
 </head>
-<body class="font-serif">
-        <header class="flex justify-center text-lg">
+<body class="font-serif flex-col flex-wrap bg-yellow-100">
+        <header class="flex justify-center text-lg w-full h-14 bg-gray-300 items-center">
             <h1>Bikini Bottom Cinema</h1></header>
             <nav class="navbar" role="navigation" aria-label="main navigation">
              <div class="navbar-brand"></div>
              <a class="navbar-item" href="https://www.farmersmarketfinder.com" aria-label="Bikini Bottom Cinema"></a>
             </nav>
-                <ul class="flex justify-end m-8">            
+                <ul class="flex justify-end m-8 text-sm">            
                    
                     <li><u>
                         <a href="dats-sharing.asp">Search History</a>
@@ -23,13 +23,13 @@
     
             </section>
             <section>
-                <form>
-                    <input type="text" name="What-Are-You-Looking-For-?" placeholder="What are you looking for?" required>
+                <form class="flex justify-center">
+                    <input class="border-4 border-gray-500 p-6 mt-60 rounded-md" type="text" name="What-Are-You-Looking-For-?" placeholder="What are you looking for?" required>
                 </form>
             </section>
 </main>
 <footer>
-    <p>
+    <p class="flex justify-center -mx-6">
         Find the movie for you!
     </p>
   </footer>
