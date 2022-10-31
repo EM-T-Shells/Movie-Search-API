@@ -5,34 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bikini Bottom Cinema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/styles.css"/>
 </head>
-<body class="bg-red-100 max-height-full">
-    <header class='px-4 py-2 bg-green-100'>
-        <div class='flex justify-evenly items-center container mx-auto'>
-          <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1643004937711/k3NMskkSn.png" width="50" alt="Daily Dev Tips Logo" />
-          <h1>Bikini Bottom Cinema</h1>
-          <a href="data-sharing.asp" class ="hover:text-blue-700 hover:bg-white hover:border-blue-600">
-            Search History
-          </a>
-        </div>
-    </header>
+<body>
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
 
-    <main class="flex flex-col items-center max-h-full">
-      <form class="border">
-        <input class="mt-4" type="text" name="search" placeholder="Find a Movie..." required>
-      </form>
-      <button id="search-btn" class="border border-black my-4 hover:bg-blue-500 hover:text-white">
+              Heroicon name: outline/bars-3
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+
+              Heroicon name: outline/x-mark
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <img class="hidden h-8 w-auto lg:block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <span class="sr-only">View notifications</span>
+          </button>
+
+          <div class="relative flex items-center ">
+            <a href="data-sharing.asp" class="hover:opacity-70 text-white">
+              <img class="h-10 w-10 rounded-full ml-4" src="assets/images/sponge-bob-profile-picture-thypix-98.jpg" alt="history button image">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<!--
+            Dropdown menu, show/hide based on menu state.
+
+            Entering: "transition ease-out duration-100"
+              From: "transform opacity-0 scale-95"
+              To: "transform opacity-100 scale-100"
+            Leaving: "transition ease-in duration-75"
+              From: "transform opacity-100 scale-100"
+              To: "transform opacity-0 scale-95"
+-->
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+      </div>
+    </div>
+  </nav>
+
+<!--form-->
+  <span>
+    <h1 class="text-center  p-48 bg-cover"
+    style="background-image: url('assets/images/spongebobtheatreimg.jpg');">
+      Bikini Bottom Cinemas
+    </h1>
+  </span>
+
+  <div class="mb-3 w-1/2">
+    <div class="input-group relative flex mb-4 left-1/2">
+      <input type="search" class="form-control relative flex-auto min-w-0 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon3">
+      <button id="search-btn" class="btn inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="button" id="button-addon3">Search</button>
+    </div>
+  </div>
+</div>
         Search
       </button>
-      <section class="border bg-blue-100 p-24">
-        <img id="poster">sdf</img>
-        <h2 id="title">sadf</h2>
-        <h2 id="vote">sadf</h2>
-        <p id="description">sadf</p>
-        <h3 id="release"></h3>
-      </section>
-    </main>
+    </section>
 
+    <section class="w-2/3 bg-blue-100">
+      <img id="poster">sdf</img>
+      <h2 id="title">sadf</h2>
+      <h2 id="vote">sadf</h2>
+      <p id="description">sadf</p>
+      <h3 id="release">hi</h3>
+    </section>
+  -->
+
+  <script src="assets/scripts.js"></script>
 </body>
 </html>
