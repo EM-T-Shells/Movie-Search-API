@@ -7,14 +7,27 @@ var searchEL = document.getElementById('search-input')
 var searchResults = document.getElementById("results");
 var searchBtnEL = document.getElementById('search-btn');
 var apiKey ="70322234d406f0f338990f054502b826";
-stateName = "Jack Reacher";
+var searchHistoryEl = document.getElementById('search-history');
+var searchCLear = document.getElementById('search-clear');
+//stateName = "Jack Reacher";
 var globalTitle = "";
+let searchHistory = JSON.parse(localStorage.getItem("movie")) || [];
 
 function formSubmitHandler(event){
     event.preventDefault();
     var movie = searchEL.value.trim();
+    console.log("hello",searchHistory);
+    
+    searchHistory.push(searchEL.value.trim());
+    localStorage.setItem("movie",JSON.stringify(searchHistory));
+    
+    getSearchHistory();
     if (movie){
         movieSearch(movie)
+        
+        
+        
+       
         searchEL.value = "";
     } 
 }
@@ -47,10 +60,9 @@ fetch(querlyUrl).then(function (response){
         var release = data.results[i].release_date;
         var vote = data.results[i].vote_average;
         
-        
+        //title element
         var titleAppend = document.createElement("h2");
         titleAppend.innerHTML = title;
-
         searchResults.appendChild(titleAppend);
 
         
@@ -60,15 +72,15 @@ fetch(querlyUrl).then(function (response){
         searchResults.appendChild(posterAppend);
          
         
-    
+        // rating element
         var voteAppend = document.createElement("h2");
         voteAppend.innerHTML = vote + " out of 10 Stars!"
         searchResults.appendChild(voteAppend);
-        
+        //release element
         var releaseAppend = document.createElement("h3");
         releaseAppend.innerHTML = release;
         searchResults.appendChild(releaseAppend);
-        
+        //description element 
         var descriptionAppend = document.createElement("p");
         descriptionAppend.innerHTML = description;
         searchResults.appendChild(descriptionAppend);
@@ -104,8 +116,30 @@ async function getPoster(title){
         return poster; 
         }
        
-
+function getSearchHistory(){
+    searchHistoryEl.innerHTML = "";
+    if (searchHistory !=""){
+    searchHistory = JSON.parse(localStorage.getItem("movie"));
+    for (i = 0; i < searchHistory.length; i++){
+        var appendHistory = document.createElement("p")
+        
+        appendHistory.innerHTML = searchHistory[i];
+        searchHistoryEl.appendChild(appendHistory);
+        console.log(appendHistory);
+    }
+}
+}
 
 searchBtnEL.addEventListener("click",formSubmitHandler)
-
+searchCLear.addEventListener("click",formCLear)
+function formCLear(){
+    searchHistory = [];
+    localStorage.setItem("movie",JSON.stringify(searchHistory));
+    getSearchHistory();
+}
+if (searchHistory !=""){
+getSearchHistory(); 
+}
  console.log(searchResults);
+ console.log(searchHistoryEl);
+ console.log(searchHistory);
