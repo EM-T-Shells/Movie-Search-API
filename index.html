@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikini Bottom Cinema</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/styles.css"/>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bikini Bottom Cinema</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="assets/scripts.js"/>
 </head>
-<body class="w-full h-full">
-  <nav class="bg-gray-800">
-    <div class="flex items-center justify-between py-1 px-2 bg-black rounded">
-      <p class="hover:opacity-40">
-        <img class="h-14 w-14 rounded-full" src="assets/images/sponge-bob-profile-picture-thypix-98.jpg" alt="history button image">
-      </p>
-      <h1 class="text-5xl text-orange-500 font-creepster">BIKINI BOTTOM MOVIES</h1>
-      <a href="data-sharing.asp" class="bg-teal-400 text-white px-3 py-2 rounded-md text-lg font-medium hover:opacity-80 hover:bg-pink-600" aria-current="page">
-        My Movies
-      </a>
-    </div>
-      <!--nav image-->
-    <img
-    src="assets/images/nickelodeon-halloween-nick-usa-twitter-header-photo-banner-2015.jpg"
-    class="object-cover w-screen h-auto"
-    alt="nav image">
-  </nav>
+<body class="flex flex-col items-center space-y-10 bg-gray-900 w-full h-auto overflow:hidden">
+   <nav class="w-67 mx-auto">
+      <div class="flex items-center justify-between py-2 px-2 space-x-6 bg-black rounded-md">
+         <p class="hover:opacity-40">
+            <img class="h-14 w-14 rounded-full" src="assets/images/sponge-bob-profile-picture-thypix-98.jpg" alt="history button image">
+         </p>
+         <h1 class="text-lg text-orange-500 font-creepster">BIKINI BOTTOM MOVIES</h1>
+         <!--<a href="data-sharing.asp" class="bg-teal-400 text-white px-3 py-2 rounded-md text-lg font-medium hover:opacity-80 hover:bg-pink-600" aria-current="page">
+         My Movies
+         </a>-->
+      </div>
+   </nav>
 
-     <!--background image-->
-  <img
-    src="assets/images/background.png"
-    class="absolute object-cover w-full h-full"
-    alt="background image"
-  />
+   <div class="flex justify-center my-2">
+      <img
+      src="assets/images/nickelodeon-halloween-nick-usa-twitter-header-photo-banner-2015.jpg"
+      class="w-96 border rounded-full"
+      alt="nav image">
+   </div>
 
-<!--form-->
-  <div class="input-group flex relative left-1/4 top-40 border rounded-md w-1/2 shadow-lg">
-    <input type="search" class="form-control h-14 w-full text-base font-normal text-gray-700 bg-white opacity-40 rounded transition ease-in-out m-0 focus:opacity-80 focus:text-blue-700 focus:bg-yellow-300 focus:border-indigo-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon3">
 
-    <button id="search-btn" class="float-right h-14 bg-blue-600 text-white font-large rounded hover:bg-pink-600 hover:bg-opacity-60 hover:text-white" type="button" id="search-btn">FIND MOVIE</button>
-  </div>
 
-    <!--<section class="w-2/3 bg-blue-100">
-      <img id="poster"></img>
-      <h2 id="title"></h2>
-      <h2 id="vote"></h2>
-      <p id="description"></p>
-      <h3 id="release"></h3>
-    </section>-->
+   <!--form image--
+      <img
+      src="assets/images/background.png"
+      class="z-0 absolute object-cover w-full h-full"
+      alt="background image"
+      />
+   -->
 
+      <!--form-->
+   <form class="input-group flex w-2/3 mx-auto border border-orange-500 rounded-md bg-yellow-300 opacity-80">
+      <input type="text" id="search-input"
+         name="type movie"
+         placeholder=" Type movie name..."
+         class="form-control ml-2 h-14 w-full text-base font-normal rounded transition ease-in-out m-0 bg-yellow-300  focus:opacity-80 focus:text-red-700 focus:border-red-800 focus:outline-none"
+         word-wrap="break-word"
+         required
+      >
+
+      <button id="search-btn"
+         class="float-right h-14 bg-blue-600 text-white font-large rounded hover:bg-pink-600 hover:bg-opacity-60 hover:text-white"
+         type="button" id="search-btn">
+         FIND MOVIE
+      </button>
+   </form>
+
+   <div class="flex flex-col items-center justify-center w-3/4 mx-auto my-2 space-y-3 border border-indigo-500">
+      <div id="results"></div>
+   </div>
+
+   <div class="flex flex-col items-center justify-center w-3/4 mx-auto space-y-10 border border-indigo-500">
+      <h1 class="text-white leading-tight">Recent Searches</h1>
+      <div id="search-history" class="text-white"></div>
+      <button id="search-clear" class="w-1/4 border border-2 border-blue-500 bg-purple-500 text-white">clear history</button>
+   </div>
 
   <script src="assets/scripts.js"></script>
 </body>
