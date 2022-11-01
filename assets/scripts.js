@@ -111,7 +111,7 @@ function getSearchHistory(){
     if (searchHistory !=""){
     searchHistory = JSON.parse(localStorage.getItem("movie"));
     for (i = 0; i < searchHistory.length; i++){
-        var appendHistory = document.createElement("p")
+        var appendHistory = document.createElement("li")
 
         appendHistory.innerHTML = searchHistory[i];
         searchHistoryEl.appendChild(appendHistory);

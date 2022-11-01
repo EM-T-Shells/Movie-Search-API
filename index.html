@@ -31,8 +31,6 @@
       alt="nav image">
    </div>
 
-
-
    <!--form image--
       <img
       src="assets/images/background.png"
@@ -41,13 +39,12 @@
       />
    -->
 
-      <!--form-->
+<!--form-->
    <form class="input-group flex w-2/3 mx-auto border border-orange-500 rounded-md bg-yellow-300 opacity-80">
       <input type="text" id="search-input"
          name="type movie"
          placeholder=" Type movie name..."
          class="form-control ml-2 h-14 w-full text-base font-normal rounded transition ease-in-out m-0 bg-yellow-300  focus:opacity-80 focus:text-red-700 focus:border-red-800 focus:outline-none"
-         word-wrap="break-word"
          required
       >
 
@@ -58,15 +55,32 @@
       </button>
    </form>
 
-   <div class="flex flex-col items-center justify-center w-3/4 mx-auto my-2 space-y-3 border border-indigo-500">
-      <div id="results"></div>
+<!--input results section-->
+   <div class="flex flex-col my-2 space-y-3 border border-indigo-500">
+      <div id="results" class="flex flex-col items-center justify-center w-1/2 word-wrap  space-y-2 text-white">
+      </div>
    </div>
 
-   <div class="flex flex-col items-center justify-center w-3/4 mx-auto space-y-10 border border-indigo-500">
-      <h1 class="text-white leading-tight">Recent Searches</h1>
-      <div id="search-history" class="text-white"></div>
-      <button id="search-clear" class="w-1/4 border border-2 border-blue-500 bg-purple-500 text-white">clear history</button>
+
+<!--search history section-->
+   <div class="flex space-x-5">
+      <h1 class="text-white">
+         Recent Searches
+      </h1>
+
+      <button id="search-clear" class="border border-2 border-blue-500 bg-purple-500 text-white">
+         clear history
+      </button>
    </div>
+
+   <div class="flex flex-col">
+      <ul id="search-history" class="word-wrap text-white">
+         <!-- new <li> to be inserted here-->
+      </ul>
+   </div>
+
+
+
 
   <script src="assets/scripts.js"></script>
 </body>
