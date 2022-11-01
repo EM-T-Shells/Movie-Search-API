@@ -1,5 +1,5 @@
-# Bikini-Bottom_Farmers-Market
+# Bikini-Bottom_Cinema
 # Application Description
-Farmers Market Only is website designed for the purpose of searching for the locations/ time of farmer's markets. 
-When the user types in a city, they are met with a list of markets that contain their location and time.
-The user will have a favorites tab that will save some of their searches to local storage.
+Bikini bottom is well known for it's movies. This application is to make it easier for locals and tourists to search and receive information about the desired film.
+When the user types in a movie title, they are met with a list of information pertaining to that film.
+The user will have a favorites tab that will save some of their searches to a local storage.
