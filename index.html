@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikini Bottom Cinema</title>
-    <script scr="https://cdn.talwindcss.com"></script>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bikini Bottom Cinema</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="assets/scripts.js"/>
 </head>
-        <header>
-            <h1>Bikini Bottom Cinema</h1>
-        </header>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-             <div class="navbar-brand"></div>
-             <a class="navbar-item" href="https://www.bikinibottomcinema.com" aria-label="Bikini Bottom Cinema"></a>
-            </nav>
-            
-                <ul>            
-                   
-                    <li> 
-                    <u>
-                    <a href="data-sharing.asp">Search History</a>
-                    </u>
-                    </li>
-                    </ul>
-                <section>
-                <form>
-                    <input id="search-input"type="text" name="What-Are-You-Looking-For-?" placeholder="What are you looking for?" required ><button id="search-btn">Search</button>
-                    
-                </form>
-                <button id="search-clear">clear history</button>
-            </section>
-            <div id="results">
-            </div>
-            <!-- <img id="poster"></img> -->
-            <!-- <div id="title"></div> -->
-            <!-- <div id="vote"></div> -->
-            <!-- <div id="description"></div> -->
-            <!-- <div id="release"></div> -->
-</main>
-<div id="search-history">
+<body class="flex flex-col items-center space-y-10 bg-orange-900 w-full h-auto overflow:hidden">
+   <nav class="mx-auto">
+      <div class="flex items-center justify-between p-2 space-x-6 bg-black bg-opacity-60 rounded-md">
+         <p class="hover:opacity-40">
+            <img
+               class="h-14 w-14 rounded-full hover:bg-red-900 hover:opacity-60"
+               src="assets/images/sponge-bob-profile-picture-thypix-98.jpg" alt="image">
+         </p>
+         <h1 class="text-lg text-orange-500 font-large hover:text-red-700">BIKINI BOTTOM MOVIES</h1>
+      </div>
+   </nav>
 
-</div>
-<footer>
-    <p>
-        <h4>Find the movie for you!</h4>
-    </p>
-  </footer>
-    <script src="assets/script.js"></script>
+   <div class="flex">
+      <img src="assets/images/nickelodeon-halloween-nick-usa-twitter-header-photo-banner-2015.jpg"
+      class="border rounded-full hover:border-red-800 hover:bg-opacity-60" alt="nav image">
+   </div>
+
+   <form class="input-group flex w-2/3 mx-auto border border-orange-500 rounded-md bg-yellow-300 opacity-80">
+      <input type="text" id="search-input"
+         name="type movie"
+         placeholder=" Type movie name..."
+         class="form-control ml-2 h-14 w-full  text-base font-normal rounded transition ease-in-out m-0 bg-yellow-300  focus:opacity-80 focus:text-red-700 focus:border-red-800 focus:outline-none"
+         required>
+      <button id="search-btn"
+         class="float-right h-14 bg-blue-600 text-white font-large rounded hover:bg-pink-600 hover:bg-opacity-60 hover:text-white"
+         type="button" id="search-btn">
+         FIND MOVIE
+      </button>
+   </form>
+
+<!--input results section-->
+   <div class="flex flex-col my-2 py-2 ">
+      <div id="results" class="flex flex-col items-center justify-center text-center word-wrap  space-y-10 text-white">
+         <!--API response inserted here-->
+      </div>
+   </div>
+
+
+<!--search history section-->
+   <div class="flex flex-col items-center word-wrap space-y-5 mx-28 border-y-2 p-4 ">
+      <h5 class="text-white text-lg underline">
+         Search History
+      </h5>
+
+      <ul id="search-history" class="text-center text-white">
+         <!-- new <li> to be inserted here-->
+      </ul>
+   </div>
+
+   <button id="search-clear" class="border border-2 bg-purple-500 hover:bg-pink-600 text-white w-1/6 p-2">
+      clear history
+   </button>
+
+  <script src="assets/scripts.js"></script>
 </body>
 </html>
